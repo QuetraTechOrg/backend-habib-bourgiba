@@ -12,16 +12,12 @@ app.use(cors());
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
-
 app.use("/api/Skill", SkillRoute);
 app.use("/api/CodingSkill", CodingSkillRoute);
 
 // app.use('/api', appRoutes)
 
-app.use((req, res) => {
+app.use("/health", (req, res) => {
   res.send({ message: "Server is healthy!!" });
 });
 //res.status(200).json({message :'give ajout'});})
